@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://providentoz.cz/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://providentoz.cz/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://providentoz.cz/">
+      <s:element name="GetAcceptApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationReferenceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProceedIndicator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAcceptApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAcceptApplicationResult" type="tns:AcceptApplication" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AcceptApplication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AcknowledgementIndicator" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetScoringResponse_empty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AffiliateCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Forename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonalNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmploymentStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HouseNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UIRADRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobilePhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HomeTelNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BankAccountIndicator" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Nationality" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="traffic_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_campaign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_content" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_medium" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_term" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MarketingCommunicationApproval" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonalDataProcessingApproval" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoringResponse_emptyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoringResponse_emptyResult" type="tns:ScoringResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ScoringResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationReferenceNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationStatus" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetScoringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AffiliateCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Forename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonalNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmploymentStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HouseNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UIRADRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobilePhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HomeTelNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BankAccountIndicator" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Nationality" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="traffic_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_campaign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_content" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_medium" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_term" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MarketingCommunicationApproval" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonalDataProcessingApproval" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoringResponseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoringResponseResult" type="tns:ScoringResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAcceptApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAcceptApplication" />
+  </wsdl:message>
+  <wsdl:message name="GetAcceptApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAcceptApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoringResponse_emptySoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoringResponse_empty" />
+  </wsdl:message>
+  <wsdl:message name="GetScoringResponse_emptySoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoringResponse_emptyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoringResponseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoringResponseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoringResponseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OnLineApplicationSoap">
+    <wsdl:operation name="GetAcceptApplication">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provident CZ Scoring</wsdl:documentation>
+      <wsdl:input message="tns:GetAcceptApplicationSoapIn" />
+      <wsdl:output message="tns:GetAcceptApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoringResponse_empty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provident CZ Scoring – empty</wsdl:documentation>
+      <wsdl:input message="tns:GetScoringResponse_emptySoapIn" />
+      <wsdl:output message="tns:GetScoringResponse_emptySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoringResponse">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provident CZ Scoring</wsdl:documentation>
+      <wsdl:input message="tns:GetScoringResponseSoapIn" />
+      <wsdl:output message="tns:GetScoringResponseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OnLineApplicationSoap" type="tns:OnLineApplicationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAcceptApplication">
+      <soap:operation soapAction="http://providentoz.cz/GetAcceptApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoringResponse_empty">
+      <soap:operation soapAction="http://providentoz.cz/GetScoringResponse_empty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoringResponse">
+      <soap:operation soapAction="http://providentoz.cz/GetScoringResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OnLineApplicationSoap12" type="tns:OnLineApplicationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAcceptApplication">
+      <soap12:operation soapAction="http://providentoz.cz/GetAcceptApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoringResponse_empty">
+      <soap12:operation soapAction="http://providentoz.cz/GetScoringResponse_empty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoringResponse">
+      <soap12:operation soapAction="http://providentoz.cz/GetScoringResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OnLineApplication">
+    <wsdl:port name="OnLineApplicationSoap" binding="tns:OnLineApplicationSoap">
+      <soap:address location="https://ows.provident.cz/osc_placebo/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OnLineApplicationSoap12" binding="tns:OnLineApplicationSoap12">
+      <soap12:address location="https://ows.provident.cz/osc_placebo/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
